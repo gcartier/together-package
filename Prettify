@@ -1,0 +1,42 @@
+on run
+	tell application "Finder"
+		tell disk "Together"
+			open
+
+			set theXOrigin to 200
+			set theYOrigin to 120
+			set theWidth to 540
+			set theHeight to 280
+
+			set theBottomRightX to (theXOrigin + theWidth)
+			set theBottomRightY to (theYOrigin + theHeight)
+
+			tell container window
+				set current view to icon view
+				set toolbar visible to false
+				set statusbar visible to false
+				set the bounds to {theXOrigin, theYOrigin, theBottomRightX, theBottomRightY}
+			end tell
+
+			set opts to the icon view options of container window
+			tell opts
+				set icon size to 116
+				set text size to 16
+				set arrangement to not arranged
+			end tell
+			set background picture of opts to file ".background:background.png"
+
+			-- Positioning
+			set position of item "Together.app" to {100, 108}
+			
+			-- Hiding
+			set the extension hidden of item "Together.app" to true
+			
+			-- Applications
+			set position of item "Applications" to {400, 108}
+
+			-- Result
+			"done"
+		end tell
+	end tell
+end run
