@@ -1,6 +1,6 @@
 on run
 	tell application "Finder"
-		tell disk "Together Test"
+		tell disk "Together"
 			open
 
 			set theXOrigin to 200
@@ -36,7 +36,7 @@ on run
 			set position of item "Applications" to {400, 108}
 
 			-- Result
-			"Prettify"
+			"done"
 		end tell
 	end tell
 end run
